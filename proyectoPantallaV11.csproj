@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18254E79-FDEA-4CA3-8EF5-8A775483CFD7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>proyectoPantalla</RootNamespace>
+    <AssemblyName>proyectoPantalla</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1357.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1357.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Logeo\CambioDeContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logeo\CambioDeContraseña.Designer.cs">
+      <DependentUpon>CambioDeContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correo.Designer.cs">
+      <DependentUpon>Correo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Administración\DadaDeAltaUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Administración\DadaDeAltaUsuario.Designer.cs">
+      <DependentUpon>DadaDeAltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Administración\RecuperaciónContraseña.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Administración\RecuperaciónContraseña.Designer.cs">
+      <DependentUpon>RecuperaciónContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\AsignaciónDeProductos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\AsignaciónDeProductos.Designer.cs">
+      <DependentUpon>AsignaciónDeProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\Caso.cs" />
+    <Compile Include="Módulo Clientes\Cliente.cs" />
+    <Compile Include="Módulo Inventario\AumentoDeProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Inventario\AumentoDeProducto.Designer.cs">
+      <DependentUpon>AumentoDeProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Clientes\DarDeAltaCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Clientes\DarDeAltaCliente.Designer.cs">
+      <DependentUpon>DarDeAltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Inventario\Producto.cs" />
+    <Compile Include="Módulo Técnicos\DarDeAltaTécnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Técnicos\DarDeAltaTécnico.Designer.cs">
+      <DependentUpon>DarDeAltaTécnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\FinalizaciónDeCaso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\FinalizaciónDeCaso.Designer.cs">
+      <DependentUpon>FinalizaciónDeCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Inventario\MuestraDeProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Inventario\MuestraDeProducto.Designer.cs">
+      <DependentUpon>MuestraDeProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Estadísticas\DetallesDeCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Módulo Estadísticas\DetallesDeCaso.Designer.cs">
+      <DependentUpon>DetallesDeCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\RegistroDeInformeFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\RegistroDeInformeFinal.Designer.cs">
+      <DependentUpon>RegistroDeInformeFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Clientes\CambioDeDatosCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Módulo Clientes\CambioDeDatosCliente.Designer.cs">
+      <DependentUpon>CambioDeDatosCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Técnicos\CambioDeDatosTécnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Módulo Técnicos\CambioDeDatosTécnico.Designer.cs">
+      <DependentUpon>CambioDeDatosTécnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logeo\InicioDeSesión.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logeo\InicioDeSesión.Designer.cs">
+      <DependentUpon>InicioDeSesión.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\MuestraDeCaso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\MuestraDeCaso.Designer.cs">
+      <DependentUpon>MuestraDeCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Clientes\MuestraDeCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Clientes\MuestraDeCliente.Designer.cs">
+      <DependentUpon>MuestraDeCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Técnicos\MuestraDeTécnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Técnicos\MuestraDeTécnico.Designer.cs">
+      <DependentUpon>MuestraDeTécnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\CancelaciónDeCaso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\CancelaciónDeCaso.Designer.cs">
+      <DependentUpon>CancelaciónDeCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Técnicos\DarDeBajaTécnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Técnicos\DarDeBajaTécnico.Designer.cs">
+      <DependentUpon>DarDeBajaTécnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Administración\EliminaciónDeUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Administración\EliminaciónDeUsuario.Designer.cs">
+      <DependentUpon>EliminaciónDeUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Estadísticas\GeneraciónDeInforme.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Estadísticas\GeneraciónDeInforme.Designer.cs">
+      <DependentUpon>GeneraciónDeInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Técnicos\Tecnico.cs" />
+    <Compile Include="ReporteGenerado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteGenerado.Designer.cs">
+      <DependentUpon>ReporteGenerado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Clientes\SelecciónDeCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Módulo Clientes\SelecciónDeCliente.Designer.cs">
+      <DependentUpon>SelecciónDeCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Técnicos\SelecciónDeTécnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Módulo Técnicos\SelecciónDeTécnico.Designer.cs">
+      <DependentUpon>SelecciónDeTécnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaPrincipal.Designer.cs">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Clientes\ModificaciónDeCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Clientes\ModificaciónDeCliente.Designer.cs">
+      <DependentUpon>ModificaciónDeCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Técnicos\ModificaciónDeTécnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Técnicos\ModificaciónDeTécnico.Designer.cs">
+      <DependentUpon>ModificaciónDeTécnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Clientes\RegistroDeCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Clientes\RegistroDeCliente.Designer.cs">
+      <DependentUpon>RegistroDeCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Inventario\RegistroDeProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Inventario\RegistroDeProducto.Designer.cs">
+      <DependentUpon>RegistroDeProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Administración\RegistroDeUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Administración\RegistroDeUsuario.Designer.cs">
+      <DependentUpon>RegistroDeUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Módulo Técnicos\RegistroDeTécnico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Técnicos\RegistroDeTécnico.Designer.cs">
+      <DependentUpon>RegistroDeTécnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Clientes\DarDeBajaCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Clientes\DarDeBajaCliente.Designer.cs">
+      <DependentUpon>DarDeBajaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\RegistroDeCaso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\RegistroDeCaso.Designer.cs">
+      <DependentUpon>RegistroDeCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\CierreDeCaso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\CierreDeCaso.Designer.cs">
+      <DependentUpon>CierreDeCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Inventario\DisminuciónDeProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Inventario\DisminuciónDeProducto.Designer.cs">
+      <DependentUpon>DisminuciónDeProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Casos\SelecciónDeProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Módulo Casos\SelecciónDeProductos.Designer.cs">
+      <DependentUpon>SelecciónDeProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Módulo Estadísticas\VistaDeDetalles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Módulo Estadísticas\VistaDeDetalles.Designer.cs">
+      <DependentUpon>VistaDeDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sigstecDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sigstecDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Validaciones.cs" />
+    <EmbeddedResource Include="Logeo\CambioDeContraseña.resx">
+      <DependentUpon>CambioDeContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correo.resx">
+      <DependentUpon>Correo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Administración\DadaDeAltaUsuario.resx">
+      <DependentUpon>DadaDeAltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Administración\RecuperaciónContraseña.resx">
+      <DependentUpon>RecuperaciónContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\AsignaciónDeProductos.resx">
+      <DependentUpon>AsignaciónDeProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Inventario\AumentoDeProducto.resx">
+      <DependentUpon>AumentoDeProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Clientes\DarDeAltaCliente.resx">
+      <DependentUpon>DarDeAltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Técnicos\DarDeAltaTécnico.resx">
+      <DependentUpon>DarDeAltaTécnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\FinalizaciónDeCaso.resx">
+      <DependentUpon>FinalizaciónDeCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Inventario\MuestraDeProducto.resx">
+      <DependentUpon>MuestraDeProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Estadísticas\DetallesDeCaso.resx">
+      <DependentUpon>DetallesDeCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\RegistroDeInformeFinal.resx">
+      <DependentUpon>RegistroDeInformeFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Clientes\CambioDeDatosCliente.resx">
+      <DependentUpon>CambioDeDatosCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Técnicos\CambioDeDatosTécnico.resx">
+      <DependentUpon>CambioDeDatosTécnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logeo\InicioDeSesión.resx">
+      <DependentUpon>InicioDeSesión.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\MuestraDeCaso.resx">
+      <DependentUpon>MuestraDeCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Clientes\MuestraDeCliente.resx">
+      <DependentUpon>MuestraDeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Técnicos\MuestraDeTécnico.resx">
+      <DependentUpon>MuestraDeTécnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\CancelaciónDeCaso.resx">
+      <DependentUpon>CancelaciónDeCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Técnicos\DarDeBajaTécnico.resx">
+      <DependentUpon>DarDeBajaTécnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Administración\EliminaciónDeUsuario.resx">
+      <DependentUpon>EliminaciónDeUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Estadísticas\GeneraciónDeInforme.resx">
+      <DependentUpon>GeneraciónDeInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteGenerado.resx">
+      <DependentUpon>ReporteGenerado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Clientes\SelecciónDeCliente.resx">
+      <DependentUpon>SelecciónDeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Técnicos\SelecciónDeTécnico.resx">
+      <DependentUpon>SelecciónDeTécnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaPrincipal.resx">
+      <DependentUpon>PantallaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Clientes\ModificaciónDeCliente.resx">
+      <DependentUpon>ModificaciónDeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Técnicos\ModificaciónDeTécnico.resx">
+      <DependentUpon>ModificaciónDeTécnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Clientes\RegistroDeCliente.resx">
+      <DependentUpon>RegistroDeCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Inventario\RegistroDeProducto.resx">
+      <DependentUpon>RegistroDeProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Administración\RegistroDeUsuario.resx">
+      <DependentUpon>RegistroDeUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Módulo Técnicos\RegistroDeTécnico.resx">
+      <DependentUpon>RegistroDeTécnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Clientes\DarDeBajaCliente.resx">
+      <DependentUpon>DarDeBajaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\RegistroDeCaso.resx">
+      <DependentUpon>RegistroDeCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\CierreDeCaso.resx">
+      <DependentUpon>CierreDeCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Inventario\DisminuciónDeProducto.resx">
+      <DependentUpon>DisminuciónDeProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Estadísticas\VistaDeDetalles.resx">
+      <DependentUpon>VistaDeDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Módulo Casos\SelecciónDeProductos.resx">
+      <DependentUpon>SelecciónDeProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sigstecDataSet.xsc">
+      <DependentUpon>sigstecDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sigstecDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sigstecDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sigstecDataSet.xss">
+      <DependentUpon>sigstecDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tecnicos - rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cliente- rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Casos - rojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="orden de facturacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="logo Redinco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
