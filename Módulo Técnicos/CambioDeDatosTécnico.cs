@@ -30,9 +30,9 @@ namespace proyectoPantalla
         bool errorCorreo = false;
         bool flagSector = true;
         bool flagAlcance = true;
-        
+
         //si cedula ya registrada error = 1, cedula mal error =2
-        
+
 
         SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
 
@@ -40,8 +40,8 @@ namespace proyectoPantalla
         {
             InitializeComponent();
             consultaTecnico(cedula);
-            
-            
+
+
         }
         private void consultaTecnico(String cedula)
         {
@@ -85,7 +85,7 @@ namespace proyectoPantalla
             }
             lector.Close();
             conexion.Close();
-          
+
         }
         private void Button2_Click(object sender, EventArgs e)
         {
@@ -97,7 +97,7 @@ namespace proyectoPantalla
                 {
                     SqlConnection conexion = new SqlConnection("Data Source=.;Initial Catalog=SIGSTEC;Integrated Security=True");
                     conexion.Open();
-                  
+
                     SqlCommand cmd = new SqlCommand("SP_ACTUALIZAR_TECNICO", conexion);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@correo", tbCorreo.Text);
@@ -126,7 +126,7 @@ namespace proyectoPantalla
                     MessageBox.Show("Error al conectar con la base:" + ex);
                 }
             }
-            
+
         }
 
         private void CambioDeDatosTécnico_Load(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace proyectoPantalla
             bool flag = Validaciones.ComprobarFormatoEmail(tbCorreo.Text);
             if (flag)
             {
-                
+
                 tbCorreo.ForeColor = Color.Green;
 
             }
@@ -173,9 +173,9 @@ namespace proyectoPantalla
         public bool validarEntrada()
         {
             //Console.WriteLine("alcance " + flagAlcance + "cedula " + flagCedula + "correo " + flagCorreo + "moviles " + flagMoviles + "nombre " + flagNombre + "sector " + flagSector + "telefonos " + flagTelefonos);
-            if (flagAlcance && flagCedula && flagCorreo && flagMoviles &&  flagSector && flagTelefonos)
+            if (flagAlcance && flagCedula && flagCorreo && flagMoviles && flagSector && flagTelefonos)
             {
-                
+
                 if (errorCorreo)
                 {
 
@@ -227,7 +227,7 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbCelular1, null);
                 flagMoviles = false;
-                
+
 
             }
             else
@@ -240,7 +240,7 @@ namespace proyectoPantalla
                     tbCelular1.ForeColor = Color.Green;
                     tbCelular2.Enabled = true;
                     errorMoviles = false;
-                    
+
                 }
                 else
                 {
@@ -250,7 +250,7 @@ namespace proyectoPantalla
                     tbCelular1.ForeColor = Color.Red;
                     tbCelular2.Enabled = false;
                     errorMoviles = true;
-                    
+
                 }
             }
         }
@@ -283,7 +283,7 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbCorreo, null);
                 flagCorreo = false;
-                
+
             }
             else
             {
@@ -292,7 +292,7 @@ namespace proyectoPantalla
                 {
                     errorProvider1.SetError(tbCorreo, null);
                     errorCorreo = false;
-                    
+
                 }
                 else
                 {
@@ -305,15 +305,15 @@ namespace proyectoPantalla
 
         private void TbAlcance_TextChanged(object sender, EventArgs e)
         {
-            if(tbAlcance.Text.Trim() == "")
+            if (tbAlcance.Text.Trim() == "")
             {
                 flagAlcance = false;
-               
+
             }
             else
             {
                 flagAlcance = true;
-                
+
             }
         }
 
@@ -322,12 +322,12 @@ namespace proyectoPantalla
             if (tbSector.Text.Trim() == "")
             {
                 flagSector = false;
-                
+
             }
             else
             {
                 flagSector = true;
-                
+
             }
 
         }
@@ -338,7 +338,7 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbTelefono1, null);
                 flagTelefonos = false;
-                
+
             }
             else
             {
@@ -349,7 +349,7 @@ namespace proyectoPantalla
                     tbTelefono1.ForeColor = Color.Green;
                     tbTelefono2.Enabled = true;
                     errorTelefonos = false;
-                    
+
                 }
                 else
                 {
@@ -359,8 +359,8 @@ namespace proyectoPantalla
                     tbTelefono1.ForeColor = Color.Red;
                     tbTelefono2.Enabled = false;
                     errorTelefonos = true;
-                    
-                    
+
+
                 }
             }
         }
@@ -373,7 +373,7 @@ namespace proyectoPantalla
             {
                 errorProvider1.SetError(tbTelefono2, null);
                 errorTelefonos2 = false;
-               
+
             }
             else
             {
@@ -386,7 +386,7 @@ namespace proyectoPantalla
                     errorProvider1.SetError(tbTelefono2, null);
                     tbTelefono2.ForeColor = Color.Green;
                     errorTelefonos2 = false;
-                   
+
 
                 }
                 else
@@ -396,7 +396,7 @@ namespace proyectoPantalla
                         "- Tener 9 dígitos");
                     tbTelefono2.ForeColor = Color.Red;
                     errorTelefonos2 = true;
-                    
+
                 }
             }
         }
@@ -408,7 +408,7 @@ namespace proyectoPantalla
                 errorProvider1.SetError(tbCelular2, null);
 
                 errorMoviles2 = false;
-                
+
 
                 tbCelular2.ForeColor = Color.Green;
 
@@ -420,8 +420,8 @@ namespace proyectoPantalla
                 {
                     errorProvider1.SetError(tbCelular2, null);
                     tbCelular2.ForeColor = Color.Green;
-                    errorMoviles2 =false;
-                    
+                    errorMoviles2 = false;
+
 
                 }
                 else
@@ -442,7 +442,7 @@ namespace proyectoPantalla
 
         private void TbCedula_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
